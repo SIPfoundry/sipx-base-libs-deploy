@@ -1,0 +1,15 @@
+[submodule "sipx-cfengine"]
+	path = sipx-cfengine
+	url = https://github.com/sipfoundrydev/sipx-cfengine
+[submodule "sipx-dart-sdk"]
+	path = sipx-dart-sdk
+	url = https://github.com/sipfoundrydev/sipx-dart-sdk
+[submodule "sipx-mongodb"]
+	path = sipx-mongodb
+	url = https://github.com/sipfoundrydev/sipx-mongodb
+[submodule "sipx-net-snmp"]
+	path = sipx-net-snmp
+	url = https://github.com/sipfoundrydev/sipx-net-snmp
+[submodule "sipx-rubygems"]
+	path = sipx-rubygems
+	url = https://github.com/sipfoundrydev/sipx-rubygems
