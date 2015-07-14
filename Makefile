@@ -18,6 +18,9 @@ LIBS = \
 build:
 	for lib in ${LIBS}; do \
 		make -C $${lib} rpm; \
+		if [[ $$? -ne 0 ]]; then \
+			exit 1; \
+		fi; \
 	done
 
 deploy:
@@ -35,6 +38,67 @@ deploy:
 			exit 1; \
 		fi; \
 	done
+
+install-deps:
+	yum -y install \
+	automake \
+	bison \
+	bzip2-devel \
+	boost-devel \
+	chrpath \
+	createrepo \
+	db4-devel \
+	elfutils-devel \
+	elfutils-libelf-devel \
+	findutils \
+	flex \
+	gcc-c++ \
+	git \
+	gtest-devel \
+	hiredis-devel \
+	iproute \
+	iptables \
+	leveldb-devel \
+	libacl-devel \
+	libconfig-devel \
+	libdnet-devel \
+	libevent-devel \
+	libmcrypt-devel \
+	libpcap-devel \
+	libselinux-devel \
+	libsrtp-devel \
+	libtool \
+	libtool-ltdl-devel \
+	lm_sensors-devel \
+	m4 \
+	mysql-devel \
+	net-tools \
+	openssl-devel \
+	pcre-devel \
+	perl \
+	perl-devel \
+	perl-TAP-Harness-Archive \
+	perl-TAP-Harness-JUnit \
+	perl-ExtUtils-Embed \
+	poco-devel \
+	postgresql-devel \
+	python-devel \
+	python-setuptools \
+	rpm-build \
+	rpm-devel \
+	ruby \
+	ruby-devel \
+	rubygem-mocha \
+	rubygem-rake \
+	rubygems \
+	scons \
+	tar \
+	tcp_wrappers-devel \
+	tetex-dvips \
+	texinfo-tex \
+	tokyocabinet-devel \
+	v8-devel \
+	xmlrpc-c-devel
 
 
 
