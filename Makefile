@@ -23,6 +23,12 @@ build:
 		fi; \
 	done
 
+docker-build:
+	docker run -t --name sipx-base-libs-builder  -v `pwd`:/BUILD sipfoundrydev/sipx-docker-base-image \
+	/bin/sh -c "cd /BUILD && yum update -y && make"; \
+	docker rm sipx-base-libs-builder
+
+
 deploy:
 	@for lib in ${LIBS}; do \
 		ssh ${SSH_OPTIONS} ${MKDIR_PARAMS}; \
